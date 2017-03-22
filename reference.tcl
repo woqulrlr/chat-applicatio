@@ -111,7 +111,7 @@ proc send { channel data } {
 proc click_send {} {
 global lab
 if { [ .num.s get ] !="" } {
-#.num.s get mean: content with .num.s 
+#.num.s get mean: pathName get ,Returns the entry's string.
   set temp [split [.num.s get] .]
 #split "comp.lang.tcl.announce" .  -> "." is important
 for { set i 0 } { $i < [ llength $temp ] } { incr i } {

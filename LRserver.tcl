@@ -1,12 +1,19 @@
-#This function read the content form client
+#text widget
+text .displaycontent -width 20 -height 5
+grid .displaycontent
+
+
+######Server Basis component############ 
+#readcontent
 proc readcontent { channel} {
 	if { ![eof $channel]} {
-		puts [read $channel 4096]
-	}
+		set a [read $channel 4096]
+ 		.displaycontent insert end "$a\n"
+	#	puts [read $channel 4096]
+	}  
 	}
 
-
-#This function accept client request and invoke readcontent()
+#accept request from client
 proc accept { channel clientaddr clientport } {
 	puts $channel
 	puts $clientaddr
@@ -15,9 +22,6 @@ proc accept { channel clientaddr clientport } {
     fileevent $channel readable [ list readcontent $channel ]
 	}
 
-
-#Create a socket and set port, function
+#creat a socket
 socket -server accept 2345
-
-#wait client
 vwait forever

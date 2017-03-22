@@ -1,8 +1,17 @@
-#set a parameter idfy,we use idfy to sotre socket descriptor.  
-set idfy [socket 192.168.1.106  2345]
+#Entry Widget:input content
+entry .inputcontent
+grid .inputcontent
 
-#put ; socket descriptor ; message content     
-puts $idfy "testing content"
+#Button Wigdet:sended message
+button .sendbutton -text "Send" -command [list send]
+grid .sendbutton
 
-#flush
+#Client baisis component
+proc send  {} {
+set idfy [socket 192.168.59.134  2345]
+set message [.inputcontent get]
+puts $idfy $message
 flush $idfy
+}
+
+

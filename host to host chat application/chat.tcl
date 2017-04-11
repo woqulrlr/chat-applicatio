@@ -1,3 +1,5 @@
+#In ths script, it combines server component and client component
+
 #Server UI
 #text widget
 text .displaycontent -width 20 -height 5

@@ -15,3 +15,6 @@ Combine server and client, now, we can only run chat.tcl. We can send and receiv
 Version 4
 Code a py server and deploy it on the VPS. Users computer only retain a client. In the other word, we don't create a TCL server socket. We just create a client socket. The py server on VPS will transmit u messages to other people.
 
+Version 5
+Updata some button: login interface, input-ip-text component and many user interface.
+
